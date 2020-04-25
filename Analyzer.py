@@ -3,6 +3,7 @@ from sklearn import metrics
 import numpy as np
 import time
 
+# Display relevant globals
 DRAW_PALM_CIRCLE = True
 MARK_FALSE_DETECTIONS = True
 SHOW_DETECTED_FINGERS_NUM_TEXT = True
@@ -16,24 +17,19 @@ DRAW_CONTOURS_ON_DETECTED_HAND = True
 DRAW_ROI_BOX = True
 SHOW_DETECTION_VIEW = True
 SHOW_PALM_CIRCLE_SUBTRACTED = True
-
-
-REASONABLE_HEIGHT_RADIUS_MODIFIER = 0.1
-
-REASONABLE_HEIGHT_PALM_DIAM_MODIFIER = 0.1
-
-MIN_DIST_PALM_RADIUS_MODIFIER = 0.5
-
-PALM_RADIUS_FACTOR = 0.6
-
-BLUR_KERNEL_SHAPE = (5, 5)
-
-ESC_BUTTON = 27
-
-DEFAULT_FONT = cv2.QT_FONT_NORMAL
-
 USER_GIVE_COORDS_MSG = "Left button to select ROI boundaries, middle button to restart"
 USER_CLICK_LEFT_TO_START = "Points set, Left click to start!"
+
+# Other modifiers
+REASONABLE_HEIGHT_RADIUS_MODIFIER = 0.1
+REASONABLE_HEIGHT_PALM_DIAM_MODIFIER = 0.1
+MIN_DIST_PALM_RADIUS_MODIFIER = 0.5
+PALM_RADIUS_FACTOR = 0.6
+BLUR_KERNEL_SHAPE = (5, 5)
+ESC_BUTTON = 27
+DEFAULT_FONT = cv2.QT_FONT_NORMAL
+
+# Colors
 BGR_RED = (0, 0, 255)
 BGR_GREEN = (0, 255, 0)
 BGR_BLUE = (255, 0, 0)
@@ -333,7 +329,7 @@ def draw_frame_with_overlay(window_name,frame,ROI_coords,finger_detection_result
         if DRAW_ROI_BOX:
             cv2.rectangle(frame, ROI_tl, ROI_br, BGR_GREEN, 1)
         if DRAW_CONTOURS_ON_DETECTED_HAND:
-            cv2.drawContours(frame, [entire_hand_coords], -1, BGR_GREEN)
+            cv2.drawContours(frame, [entire_hand_coords], -1, BGR_BLUE)
         if MARK_PALM_CENTER:
             draw_square_around_pixel(frame, real_palm_center, 2, BGR_RED, 1)
         if MARK_PALM_CENTER_TEXT:
