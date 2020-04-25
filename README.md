@@ -32,4 +32,11 @@ points that might be fingers.
 8. Compute contours on the circle with holes we computed, every contour we get might be a finger (or a palm)!
 9. Filter out the contours we got using some technical criteria to determine which ones represent a finger.
 10. Now we have all contours that represent fingers!
-11. do this all over again on each frame.
+11. Repeat 3-10 each frame with some cool displays of the parameters we computed.
+
+## How to use:
+
+1. Clone repo (or just download Analyzer.py)
+2. Make sure you have all dependencies listed above and running Python3.6
+3. Run the file and follow instructions
+
