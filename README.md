@@ -18,8 +18,8 @@
 A background image is an average of the 30 frames that will be used to detect motion (in our case, the hand) in front of
 it.
 3. Once we have a background image, iterate over frames from the camera until a movement has been detected in the ROI:
-   -Convert the ROI to grayscale and blur it, this helps computation and lessens the effects of noise.
-   -Movements are detected by subtracting the new ROI from the background ROI and applying a threshold filter to the
+   - Convert the ROI to grayscale and blur it, this helps computation and lessens the effects of noise.
+   - Movements are detected by subtracting the new ROI from the background ROI and applying a threshold filter to the
     result, this way everything equal to the background is turned to black and everything new (our "movement") gets
     turned into white pixels.
 4. Compute the contour of the movement (our hand) in the ROI (we use the maximum contour detected, since it is the 
